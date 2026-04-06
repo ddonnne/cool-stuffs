@@ -1,0 +1,73 @@
+body{
+    background: linear-gradient(135deg,#4facfe,#00f2fe);
+    height:100vh;
+    display:flex;
+    justify-content: space-between;
+    gap: 100px;
+    align-items:center;
+}
+
+
+.glass-card{
+    width:250px;
+    height: 150px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-size: 20px;
+}
+
+
+.water-card{
+    position: relative;
+
+    width: 200px;
+    height: 200px;
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(30px);
+
+    background: linear-gradient(
+        145deg
+        rgba(255,255,255,0.4)
+        rgba(255,255,255,0.05)
+    );
+
+    border:1px solid rgba(255,255,255,0.3);
+
+    box-shadow: inset 0 2px 6px rgba(255,255,255,0.5),
+    0 10px 30px rgba(0,0,0,0.2);
+
+}
+
+.water-card::before{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top:-50%;
+    left: -50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,0.5),
+        transparent 60%
+
+    );
+
+    animation: ripple 8s infinite ease-in-out;
+}
+
+@keyframes ripple{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
